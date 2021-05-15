@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trình Ghi Âm Trực tuyến - Ghi Âm từ Microphone</title>
+    <link rel="icon" type="image/svg+xml" href="https://static.123apps.com/i/v3/favicon.svg">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/template.css">
+    <link rel="stylesheet" href="css/voice-recorder.css">
+    <style>
+        .voice-recorder {
+            border-radius: 0 !important;
+            font-family: "Open Sans", sans-serif;
+        }
+    </style>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="vrecorder vi vrecorder" id="body">
+    <!-- Begin header -->
+    <div class="header"> <button type="button" class="burger"> <span class="bar"></span> <span class="bar"></span> <span class="bar"></span> </button>
+        <a href="https://123apps.com/vi/" class="logo icon icon-logo"></a>
+        <nav class="main-menu" role="navigation" aria-label="Menu" style="overflow: visible;">
+            <ul class="level-1">
+                <li class=" has-dropdown">
+                    <a class="has-dropdown" aria-haspopup="true" href="#"> <i class="icon icon-left icon-vtools"></i>Video Tools<i class="icon icon-dropdown"></i> </a>
+                    <ul class="level-2" aria-label="submenu" role="menu">
+                        <li class="vtrim">
+                            <a href="https://online-video-cutter.com/vi/"> <i class="icon icon-vtrim"></i>Trim </a>
+                        </li>
+                        <li class="vcrop">
+                            <a href="https://online-video-cutter.com/vi/crop"> <i class="icon icon-vcrop"></i>Crop </a>
+                        </li>
+                        <li class="vrotate">
+                            <a href="https://online-video-cutter.com/vi/rotate"> <i class="icon icon-vrotate"></i>Rotate </a>
+                        </li>
+                        <li class="vflip">
+                            <a href="https://online-video-cutter.com/vi/flip"> <i class="icon icon-vflip"></i>Flip </a>
+                        </li>
+                        <li class="vresolution">
+                            <a href="https://online-video-cutter.com/vi/resolution"> <i class="icon icon-vresolution"></i>Change Resolution </a>
+                        </li>
+                        <li class="vloop">
+                            <a href="https://online-video-cutter.com/vi/loop"> <i class="icon icon-vloop"></i>Loop </a>
+                        </li>
+                        <li class="vvolume">
+                            <a href="https://online-video-cutter.com/vi/volume"> <i class="icon icon-vvolume"></i>Change Volume </a>
+                        </li>
+                        <li class="vspeed">
+                            <a href="https://online-video-cutter.com/vi/speed"> <i class="icon icon-vspeed"></i>Change Speed </a>
+                        </li>
+                        <li class="delogo">
+                            <a href="https://online-video-cutter.com/vi/remove-logo"> <i class="icon icon-delogo"></i>Remove Logo </a>
+                        </li>
+                        <li class="addimage">
+                            <a href="https://online-video-cutter.com/vi/add-image"> <i class="icon icon-addimage"></i>Add Image </a>
+                        </li>
+                        <li class="addtext">
+                            <a href="https://online-video-cutter.com/vi/add-text"> <i class="icon icon-addtext"></i>Add Text </a>
+                        </li>
+                        <li class="stabilize">
+                            <a href="https://online-video-cutter.com/vi/stabilize-video"> <i class="icon icon-stabilize"></i>Stabilize Video </a>
+                        </li>
+                        <li class="webcamera">
+                            <a href="https://webcamera.io/vi/"> <i class="icon icon-webcamera"></i>Video Recorder </a>
+                        </li>
+                        <li class="vtrim_v2">
+                            <a href="https://online-video-cutter.com/vi/old/"> <i class="icon icon-vtrim_v2"></i>Video Cutter <span class="d">(Previous Version)</span> </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="current has-dropdown">
+                    <a class="has-dropdown" aria-haspopup="true" href="#"> <i class="icon icon-left icon-atools"></i>Audio Tools<i class="icon icon-dropdown"></i> </a>
+                    <ul class="level-2" aria-label="submenu" role="menu">
+                        <li class="atrim">
+                            <a href="https://mp3cut.net/vi/"> <i class="icon icon-atrim"></i>Trim </a>
+                        </li>
+                        <li class="avolume">
+                            <a href="https://mp3cut.net/vi/change-volume"> <i class="icon icon-avolume"></i>Change Volume </a>
+                        </li>
+                        <li class="aspeed">
+                            <a href="https://mp3cut.net/vi/change-speed"> <i class="icon icon-aspeed"></i>Change Speed </a>
+                        </li>
+                        <li class="pitch">
+                            <a href="https://mp3cut.net/vi/change-pitch"> <i class="icon icon-pitch"></i>Change Pitch </a>
+                        </li>
+                        <li class="equalizer">
+                            <a href="https://mp3cut.net/vi/equalizer"> <i class="icon icon-equalizer"></i>Equalizer </a>
+                        </li>
+                        <li class="areverse">
+                            <a href="https://mp3cut.net/vi/reverse-audio"> <i class="icon icon-areverse"></i>Reverse Audio </a>
+                        </li>
+                        <li class="vrecorder current">
+                            <a href="https://online-voice-recorder.com/vi/" class="current"> <i class="icon icon-vrecorder"></i>Voice Recorder </a>
+                        </li>
+                        <li class="ajoiner">
+                            <a href="https://audio-joiner.com/vi/"> <i class="icon icon-ajoiner"></i>Audio Joiner </a>
+                        </li>
+                        <li class="atrim_v2">
+                            <a href="https://mp3cut.net/vi/trim-legacy"> <i class="icon icon-atrim_v2"></i>Audio Cutter <span class="d">(Previous Version)</span> </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class=" has-dropdown">
+                    <a class="has-dropdown" aria-haspopup="true" href="#"> <i class="icon icon-left icon-pdftools"></i>PDF Tools<i class="icon icon-dropdown"></i> </a>
+                    <ul class="level-2" aria-label="submenu" role="menu">
+                        <li class="frompdf has-dropdown">
+                            <a href="#"> <i class="icon icon-frompdf"></i>từ PDF </a>
+                            <ul class="level-3" aria-label="submenu" role="menu">
+                                <li>
+                                    <a href="https://pdf.io/vi/pdf2doc/"> <i class="icon icon-pdf2doc"></i>PDF sang Word </a>
+                                </li>
+                                <li>
+                                    <a href="https://pdf.io/vi/pdf2xls/"> <i class="icon icon-pdf2xls"></i>PDF sang Excel </a>
+                                </li>
+                                <li>
+                                    <a href="https://pdf.io/vi/pdf2jpg/"> <i class="icon icon-pdf2jpg"></i>PDF sang JPG </a>
+                                </li>
+                                <li>
+                                    <a href="https://pdf.io/vi/pdf2png/"> <i class="icon icon-pdf2png"></i>PDF sang PNG </a>
+                                </li>
+                                <li>
+                                    <a href="https://pdf.io/vi/pdf2html/"> <i class="icon icon-pdf2html"></i>PDF sang HTML </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="topdf has-dropdown">
+                            <a href="#"> <i class="icon icon-topdf"></i>Chuyển đổi sang PDF </a>
+                            <ul class="level-3" aria-label="submenu" role="menu">
+                                <li>
+                                    <a href="https://pdf.io/vi/doc2pdf/"> <i class="icon icon-doc2pdf"></i>Word sang PDF </a>
+                                </li>
+                                <li>
+                                    <a href="https://pdf.io/vi/jpg2pdf/"> <i class="icon icon-jpg2pdf"></i>JPG sang PDF </a>
+                                </li>
+                                <li>
+                                    <a href="https://pdf.io/vi/xls2pdf/"> <i class="icon icon-xls2pdf"></i>Excel sang PDF </a>
+                                </li>
+                                <li>
+                                    <a href="https://pdf.io/vi/ppt2pdf/"> <i class="icon icon-ppt2pdf"></i>PPT sang PDF </a>
+                                </li>
+                                <li>
+                                    <a href="https://pdf.io/vi/png2pdf/"> <i class="icon icon-png2pdf"></i>PNG sang PDF </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="split">
+                            <a href="https://pdf.io/vi/split/"> <i class="icon icon-split"></i>Tách </a>
+                        </li>
+                        <li class="merge">
+                            <a href="https://pdf.io/vi/merge/"> <i class="icon icon-merge"></i>Hợp nhất </a>
+                        </li>
+                        <li class="compress">
+                            <a href="https://pdf.io/vi/compress/"> <i class="icon icon-compress"></i>Nén </a>
+                        </li>
+                        <li class="unlock">
+                            <a href="https://pdf.io/vi/unlock/"> <i class="icon icon-unlock"></i>Mở khóa </a>
+                        </li>
+                        <li class="protect">
+                            <a href="https://pdf.io/vi/protect/"> <i class="icon icon-protect"></i>Bảo vệ </a>
+                        </li>
+                        <li class="rotate">
+                            <a href="https://pdf.io/vi/rotate/"> <i class="icon icon-rotate"></i>Xoay </a>
+                        </li>
+                        <li class="page-numbers">
+                            <a href="https://pdf.io/vi/page-numbers/"> <i class="icon icon-page-numbers"></i>Thêm Số Trang </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class=" has-dropdown">
+                    <a class="has-dropdown" aria-haspopup="true" href="#"> <i class="icon icon-left icon-converters"></i>Converters<i class="icon icon-dropdown"></i> </a>
+                    <ul class="level-2" aria-label="submenu" role="menu">
+                        <li class="aconv">
+                            <a href="https://online-audio-converter.com/vi/"> <i class="icon icon-aconv"></i>Trình Chuyển đổi Âm thanh </a>
+                        </li>
+                        <li class="vconv">
+                            <a href="https://convert-video-online.com/vi/"> <i class="icon icon-vconv"></i>Trình Chuyển đổi Video </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class=" has-dropdown">
+                    <a class="has-dropdown" aria-haspopup="true" href="#"> <i class="icon icon-left icon-utils"></i>Utilities<i class="icon icon-dropdown"></i> </a>
+                    <ul class="level-2" aria-label="submenu" role="menu">
+                        <li class="unarchiver">
+                            <a href="https://extract.me/vi/"> <i class="icon icon-unarchiver"></i>Archive Extractor </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="more hidden">
+                    <a class="has-dropdown" href="#" aria-haspopup="true"> <i class="icon icon-more"></i> </a>
+                    <ul class="level-2 more" aria-label="submenu" role="menu"></ul>
+                </li>
+            </ul>
+        </nav>
+        <div class="buttons">
+            <div id="usermenu"> <button id="sign-in" class="sign-in sm" data-toggle="modal" data-target="#modal-signup">Sign In</button> </div>
+        </div>
+    </div>
+    <!-- End header -->
+
+    <div style="margin-bottom: 10rem;"></div>
+
+    <!-- Begin  content-->
+    <div class="content" style="height: auto !important;">
+        <div class="vr-voice-recorder-container">
+            <!-- Begin pre-record -->
+            <div class="voice-recorder wait-record">
+                <div class="allow-mic-message ">
+                    <div class="mic-icon"> <svg width="24px" height="26px" viewBox="0 0 24 26" version="1.1" xmlns="http://www.w3.org/2000/svg"> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <path d="M21.3333333,12 L19.0666667,12 C19.0666667,12.9866667 18.8533333,13.9066667 18.4933333,14.7333333 L20.1333333,16.3733333 C20.88,15.0666667 21.3333333,13.5866667 21.3333333,12 Z M15.9733333,12.2266667 C15.9733333,12.1466667 16,12.08 16,12 L16,4 C16,1.78666667 14.2133333,0 12,0 C9.78666667,0 8,1.78666667 8,4 L8,4.24 L15.9733333,12.2266667 Z M1.69333333,1.33333333 L0,3.02666667 L8.01333333,11.04 L8.01333333,12 C8.01333333,14.2133333 9.78666667,16 12,16 C12.2933333,16 12.5866667,15.96 12.8666667,15.8933333 L15.08,18.1066667 C14.1333333,18.5466667 13.08,18.8 12,18.8 C8.32,18.8 4.93333333,16 4.93333333,12 L2.66666667,12 C2.66666667,16.5466667 6.29333333,20.3066667 10.6666667,20.96 L10.6666667,25.3333333 L13.3333333,25.3333333 L13.3333333,20.96 C14.5466667,20.7866667 15.6933333,20.36 16.72,19.76 L22.3066667,25.3333333 L24,23.64 L1.69333333,1.33333333 Z" id="Shape" fill="#FFFFFF" fill-rule="nonzero"></path> </g> </svg>                        </div>
+                    <div>Please allow access to your microphone to continue…</div>
+                </div>
+                <div class="reaching-max-time-msg">
+                    <div class="msg"> You are reaching maximum record time. Recording will be stopped in <span class="time"></span> </div>
+                </div>
+                <div class="press-mic-message">
+                    <div>Click the button to start recording…</div>
+                </div>
+                <div class="waveform-container">
+                    <div class="audio-editor">
+                        <div class="top-controls"> <button class="btn-quit"> <!--?xml version="1.0" encoding="UTF-8"?--> <svg width="15px" height="15px" viewBox="0 0 15 15" version="1.1" xmlns="http://www.w3.org/2000/svg"> <defs></defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <path d="M14.7113288,0.288671184 L14.7113288,0.288671184 C14.3264339,-0.0962237281 13.702396,-0.0962237281 13.317501,0.288671184 L7.5,6.10617222 L1.68249896,0.288671184 C1.29760405,-0.0962237281 0.673566097,-0.0962237281 0.288671184,0.288671184 L0.288671184,0.288671184 C-0.0962237281,0.673566097 -0.0962237281,1.29760405 0.288671184,1.68249896 L6.10617222,7.5 L0.288671184,13.317501 C-0.0962237281,13.702396 -0.0962237281,14.3264339 0.288671184,14.7113288 L0.288671184,14.7113288 C0.673566097,15.0962237 1.29760405,15.0962237 1.68249896,14.7113288 L7.5,8.89382778 L13.317501,14.7113288 C13.702396,15.0962237 14.3264339,15.0962237 14.7113288,14.7113288 L14.7113288,14.7113288 C15.0962237,14.3264339 15.0962237,13.702396 14.7113288,13.317501 L8.89382778,7.5 L14.7113288,1.68249896 C15.0962237,1.29760405 15.0962237,0.673566097 14.7113288,0.288671184 Z" id="Shape" fill="#FFFFFF" fill-rule="nonzero"></path> </g> </svg> </button>                            </div>
+                        <div class="canvas-and-controls">
+                            <div class="waveform-canvas-container">
+                                <div class="selection-area"></div>
+                                <div class="canvas-wrapper"> <canvas class="waveform-canvas" width="1366" height="120"></canvas> </div>
+                                <div class="play-progress-line"></div>
+                            </div>
+                            <div class="control-bars-wrapper">
+                                <div class="record-controls">
+                                    <div class="control-bar cb-left"> </div>
+                                    <div class="control-bar cb-right"> </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="controls flex">
+                            <div class="flex-1"> <button class="play-button"> <div class="tooltip"> <span>Phát</span> <span class="space">Space</span> </div> <div class="arrow"></div> </button> <button class="fade-in"></button> <button class="fade-out"></button> </div>
+                            <div class="block-save flex">
+                                <div class="flex-right"> <button class="btn-save"> <div class="save-label">Lưu lại</div> <div class="save-processing"> <div class="save-processing-bg"></div> <div class="save-processing-label">Đang xử lý...</div> </div> </button>
+                                    <div class="dropdown">
+                                        <button class="btn-save-gdrive">Google Drive</button> <button class="btn-save-dropbox">Dropbox</button> </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dialog-quit">
+                            <div class="label-quit">Are you sure you want to finish editing?</div> <button class="btn-quit-accept">Có</button> <button class="btn-quit-deny">Hủy bỏ</button> </div>
+                    </div>
+                </div>
+                <div class="bottom-menu">
+                    <div class="mode-switch flex-1 flex-left"> </div>
+                    <div class="flex-1 flex-center">
+                        <div class="btn-record" id="btn-wait-record"> <i class="icn-record"> <i class="icn-record-inner"></i> <svg width="14px" height="19px" viewBox="0 0 14 19" version="1.1" xmlns="http://www.w3.org/2000/svg"> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <path d="M7,12 C8.66,12 9.99,10.66 9.99,9 L10,3 C10,1.34 8.66,0 7,0 C5.34,0 4,1.34 4,3 L4,9 C4,10.66 5.34,12 7,12 Z M12.3,9 C12.3,12 9.76,14.1 7,14.1 C4.24,14.1 1.7,12 1.7,9 L0,9 C0,12.41 2.72,15.23 6,15.72 L6,19 L8,19 L8,15.72 C11.28,15.24 14,12.42 14,9 L12.3,9 Z" id="mic" fill="#FFFFFF" fill-rule="nonzero"></path> </g> </svg>                            </i>
+                            <div class="record-timer"> 00:00 </div>
+                            <div class="processing-info">
+                                <div class="processing-info-inner"> </div>
+                                <div class="processing-text"> <span class="the-text">Đang xử lý...</span> </div>
+                            </div>
+                        </div> <button type="button" class="btn-pause-record"> <i class="icn-pause-record"> <svg width="12px" height="15px" viewBox="0 0 12 15" version="1.1" xmlns="http://www.w3.org/2000/svg"> <defs></defs> <g id="webcamera.io" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="ui_kit" transform="translate(-117.000000, -695.000000)" fill="#FFFFFF"> <g id="Group-3" transform="translate(100.000000, 680.000000)"> <g id="record_pause" transform="translate(17.000000, 15.000000)"> <rect id="Rectangle-6" x="0" y="0" width="4" height="15" rx="1"></rect> <rect id="Rectangle-6-Copy-2" x="8" y="0" width="4" height="15" rx="1"></rect> </g> </g> </g> </g> </svg> </i> </button>                        </div>
+                    <div class="flex-1 flex-right">
+                        <div class="settings"> <button type="button" class="btn-settings"> <svg width="21px" height="21px" viewBox="0 0 21 21" version="1.1" xmlns="http://www.w3.org/2000/svg"> <defs></defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <path d="M18.0172982,11.529 C18.0592982,11.193 18.0907982,10.857 18.0907982,10.5 C18.0907982,10.143 18.0592982,9.807 18.0172982,9.471 L20.2327982,7.7385 C20.4322982,7.581 20.4847982,7.2975 20.3587982,7.0665 L18.2587982,3.4335 C18.1327982,3.2025 17.8492982,3.1185 17.6182982,3.2025 L15.0037982,4.2525 C14.4577982,3.8325 13.8697982,3.486 13.2292982,3.2235 L12.8302982,0.441 C12.7987982,0.189 12.5782982,0 12.3157982,0 L8.11579818,0 C7.85329818,0 7.63279818,0.189 7.60129818,0.441 L7.20229818,3.2235 C6.56179818,3.486 5.97379818,3.843 5.42779818,4.2525 L2.81329818,3.2025 C2.57179818,3.108 2.29879818,3.2025 2.17279818,3.4335 L0.0727981841,7.0665 C-0.0637018159,7.2975 -0.000701815872,7.581 0.198798184,7.7385 L2.41429818,9.471 C2.37229818,9.807 2.34079818,10.1535 2.34079818,10.5 C2.34079818,10.8465 2.37229818,11.193 2.41429818,11.529 L0.198798184,13.2615 C-0.000701815872,13.419 -0.0532018159,13.7025 0.0727981841,13.9335 L2.17279818,17.5665 C2.29879818,17.7975 2.58229818,17.8815 2.81329818,17.7975 L5.42779818,16.7475 C5.97379818,17.1675 6.56179818,17.514 7.20229818,17.7765 L7.60129818,20.559 C7.63279818,20.811 7.85329818,21 8.11579818,21 L12.3157982,21 C12.5782982,21 12.7987982,20.811 12.8302982,20.559 L13.2292982,17.7765 C13.8697982,17.514 14.4577982,17.157 15.0037982,16.7475 L17.6182982,17.7975 C17.8597982,17.892 18.1327982,17.7975 18.2587982,17.5665 L20.3587982,13.9335 C20.4847982,13.7025 20.4322982,13.419 20.2327982,13.2615 L18.0172982,11.529 Z M10.2157982,14.175 C8.18929818,14.175 6.54079818,12.5265 6.54079818,10.5 C6.54079818,8.4735 8.18929818,6.825 10.2157982,6.825 C12.2422982,6.825 13.8907982,8.4735 13.8907982,10.5 C13.8907982,12.5265 12.2422982,14.175 10.2157982,14.175 Z" id="settings" fill="#FFFFFF" fill-rule="nonzero"></path> </g> </svg> </button>
+                            <div class="dialog-settings hidden">
+                                <div class="settings-group mic-enable active">
+                                    <div class="settings-header wrapper"> <span>Microphone</span> </div>
+                                    <div class="settings-mics visible">
+                                        <ul class="select-mic">
+                                            <li data-device-id="default" data-device-label="Default - Microphone (Realtek Audio)" class="mic-item active"><i class="a-indicator"></i><span>Default - Microphone (Realtek Audio)</span></li>
+                                            <li data-device-id="communications" data-device-label="Communications - Microphone (Realtek Audio)" class="mic-item"><i class="a-indicator"></i><span>Communications - Microphone (Realtek Audio)</span></li>
+                                            <li data-device-id="2295718b7984b518e6ca0110324ec179ec8db61ec75ed0be989a6f660973ed5d" data-device-label="Microphone (Realtek Audio)" class="mic-item"><i class="a-indicator"></i><span>Microphone (Realtek Audio)</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="alert error browser-not-supported">
+                    <div class="alert_icon"></div>
+                    <div class="h">Your browser is not supported</div>
+                    <div class="desc">To use this website, we recommend the latest version of <a href="https://www.google.com/chrome/browser/desktop/index.html" target="_blank" rel="nofollow">Chrome</a> or <a href="https://www.mozilla.org/firefox/new/" target="_blank"
+                            rel="nofollow">Firefox</a>.</div>
+                </div>
+                <div class="alert error common" id="alert-template">
+                    <div class="alert_icon"></div>
+                    <div class="desc only hidden no-mics">No microphones found. Sound recording is unavailable.</div>
+                    <div class="desc only hidden internal-error">Browser error. Please reload the page.</div>
+                    <div class="buttons"> <button class="btn white btn-alert-ok">Ok</button> </div>
+                </div>
+            </div>
+            <!-- End pre-record -->
+
+            <!-- Begin start record -->
+            <div class="voice-recorder active paused display-none">
+                <div class="allow-mic-message ">
+                    <div class="mic-icon"> <svg width="24px" height="26px" viewBox="0 0 24 26" version="1.1" xmlns="http://www.w3.org/2000/svg"> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <path d="M21.3333333,12 L19.0666667,12 C19.0666667,12.9866667 18.8533333,13.9066667 18.4933333,14.7333333 L20.1333333,16.3733333 C20.88,15.0666667 21.3333333,13.5866667 21.3333333,12 Z M15.9733333,12.2266667 C15.9733333,12.1466667 16,12.08 16,12 L16,4 C16,1.78666667 14.2133333,0 12,0 C9.78666667,0 8,1.78666667 8,4 L8,4.24 L15.9733333,12.2266667 Z M1.69333333,1.33333333 L0,3.02666667 L8.01333333,11.04 L8.01333333,12 C8.01333333,14.2133333 9.78666667,16 12,16 C12.2933333,16 12.5866667,15.96 12.8666667,15.8933333 L15.08,18.1066667 C14.1333333,18.5466667 13.08,18.8 12,18.8 C8.32,18.8 4.93333333,16 4.93333333,12 L2.66666667,12 C2.66666667,16.5466667 6.29333333,20.3066667 10.6666667,20.96 L10.6666667,25.3333333 L13.3333333,25.3333333 L13.3333333,20.96 C14.5466667,20.7866667 15.6933333,20.36 16.72,19.76 L22.3066667,25.3333333 L24,23.64 L1.69333333,1.33333333 Z" id="Shape" fill="#FFFFFF" fill-rule="nonzero"></path> </g> </svg>                        </div>
+                    <div>Please allow access to your microphone to continue…</div>
+                </div>
+                <div class="reaching-max-time-msg">
+                    <div class="msg"> You are reaching maximum record time. Recording will be stopped in <span class="time"></span> </div>
+                </div>
+                <div class="press-mic-message">
+                    <div>Click the button to start recording…</div>
+                </div>
+                <div class="waveform-container">
+                    <div class="audio-editor">
+                        <div class="top-controls"> <button class="btn-quit"> <!--?xml version="1.0" encoding="UTF-8"?--> <svg width="15px" height="15px" viewBox="0 0 15 15" version="1.1" xmlns="http://www.w3.org/2000/svg"> <defs></defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <path d="M14.7113288,0.288671184 L14.7113288,0.288671184 C14.3264339,-0.0962237281 13.702396,-0.0962237281 13.317501,0.288671184 L7.5,6.10617222 L1.68249896,0.288671184 C1.29760405,-0.0962237281 0.673566097,-0.0962237281 0.288671184,0.288671184 L0.288671184,0.288671184 C-0.0962237281,0.673566097 -0.0962237281,1.29760405 0.288671184,1.68249896 L6.10617222,7.5 L0.288671184,13.317501 C-0.0962237281,13.702396 -0.0962237281,14.3264339 0.288671184,14.7113288 L0.288671184,14.7113288 C0.673566097,15.0962237 1.29760405,15.0962237 1.68249896,14.7113288 L7.5,8.89382778 L13.317501,14.7113288 C13.702396,15.0962237 14.3264339,15.0962237 14.7113288,14.7113288 L14.7113288,14.7113288 C15.0962237,14.3264339 15.0962237,13.702396 14.7113288,13.317501 L8.89382778,7.5 L14.7113288,1.68249896 C15.0962237,1.29760405 15.0962237,0.673566097 14.7113288,0.288671184 Z" id="Shape" fill="#FFFFFF" fill-rule="nonzero"></path> </g> </svg> </button>                            </div>
+                        <div class="canvas-and-controls">
+                            <div class="waveform-canvas-container">
+                                <div class="selection-area"></div>
+                                <div class="canvas-wrapper"> <canvas class="waveform-canvas" width="1366" height="120"></canvas> </div>
+                                <div class="play-progress-line"></div>
+                            </div>
+                            <div class="control-bars-wrapper">
+                                <div class="record-controls">
+                                    <div class="control-bar cb-left"> </div>
+                                    <div class="control-bar cb-right"> </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="controls flex">
+                            <div class="flex-1"> <button class="play-button"> <div class="tooltip"> <span>Phát</span> <span class="space">Space</span> </div> <div class="arrow"></div> </button> <button class="fade-in"></button> <button class="fade-out"></button> </div>
+                            <div class="block-save flex">
+                                <div class="flex-right"> <button class="btn-save"> <div class="save-label">Lưu lại</div> <div class="save-processing"> <div class="save-processing-bg"></div> <div class="save-processing-label">Đang xử lý...</div> </div> </button>
+                                    <div class="dropdown">
+                                        <button class="btn-save-gdrive">Google Drive</button> <button class="btn-save-dropbox">Dropbox</button> </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dialog-quit">
+                            <div class="label-quit">Are you sure you want to finish editing?</div> <button class="btn-quit-accept">Có</button> <button class="btn-quit-deny">Hủy bỏ</button> </div>
+                    </div>
+                </div>
+                <div class="bottom-menu">
+                    <div class="mode-switch flex-1 flex-left"> </div>
+                    <div class="flex-1 flex-center">
+                        <div class="btn-record active" id="btn-paused-record"> <i class="icn-record"> <i class="icn-record-inner"></i> <svg width="14px" height="19px" viewBox="0 0 14 19" version="1.1" xmlns="http://www.w3.org/2000/svg"> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <path d="M7,12 C8.66,12 9.99,10.66 9.99,9 L10,3 C10,1.34 8.66,0 7,0 C5.34,0 4,1.34 4,3 L4,9 C4,10.66 5.34,12 7,12 Z M12.3,9 C12.3,12 9.76,14.1 7,14.1 C4.24,14.1 1.7,12 1.7,9 L0,9 C0,12.41 2.72,15.23 6,15.72 L6,19 L8,19 L8,15.72 C11.28,15.24 14,12.42 14,9 L12.3,9 Z" id="mic" fill="#FFFFFF" fill-rule="nonzero"></path> </g> </svg>                            </i>
+                            <div class="record-timer">00:01</div>
+                            <div class="processing-info">
+                                <div class="processing-info-inner"> </div>
+                                <div class="processing-text"> <span class="the-text">Đang xử lý...</span> </div>
+                            </div>
+                        </div> <button type="button" class="btn-pause-record active"> <i class="icn-pause-record"> <svg width="12px" height="15px" viewBox="0 0 12 15" version="1.1" xmlns="http://www.w3.org/2000/svg"> <defs></defs> <g id="webcamera.io" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="ui_kit" transform="translate(-117.000000, -695.000000)" fill="#FFFFFF"> <g id="Group-3" transform="translate(100.000000, 680.000000)"> <g id="record_pause" transform="translate(17.000000, 15.000000)"> <rect id="Rectangle-6" x="0" y="0" width="4" height="15" rx="1"></rect> <rect id="Rectangle-6-Copy-2" x="8" y="0" width="4" height="15" rx="1"></rect> </g> </g> </g> </g> </svg> </i> </button>                        </div>
+                    <div class="flex-1 flex-right">
+                        <div class="settings"> <button type="button" class="btn-settings"> <svg width="21px" height="21px" viewBox="0 0 21 21" version="1.1" xmlns="http://www.w3.org/2000/svg"> <defs></defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <path d="M18.0172982,11.529 C18.0592982,11.193 18.0907982,10.857 18.0907982,10.5 C18.0907982,10.143 18.0592982,9.807 18.0172982,9.471 L20.2327982,7.7385 C20.4322982,7.581 20.4847982,7.2975 20.3587982,7.0665 L18.2587982,3.4335 C18.1327982,3.2025 17.8492982,3.1185 17.6182982,3.2025 L15.0037982,4.2525 C14.4577982,3.8325 13.8697982,3.486 13.2292982,3.2235 L12.8302982,0.441 C12.7987982,0.189 12.5782982,0 12.3157982,0 L8.11579818,0 C7.85329818,0 7.63279818,0.189 7.60129818,0.441 L7.20229818,3.2235 C6.56179818,3.486 5.97379818,3.843 5.42779818,4.2525 L2.81329818,3.2025 C2.57179818,3.108 2.29879818,3.2025 2.17279818,3.4335 L0.0727981841,7.0665 C-0.0637018159,7.2975 -0.000701815872,7.581 0.198798184,7.7385 L2.41429818,9.471 C2.37229818,9.807 2.34079818,10.1535 2.34079818,10.5 C2.34079818,10.8465 2.37229818,11.193 2.41429818,11.529 L0.198798184,13.2615 C-0.000701815872,13.419 -0.0532018159,13.7025 0.0727981841,13.9335 L2.17279818,17.5665 C2.29879818,17.7975 2.58229818,17.8815 2.81329818,17.7975 L5.42779818,16.7475 C5.97379818,17.1675 6.56179818,17.514 7.20229818,17.7765 L7.60129818,20.559 C7.63279818,20.811 7.85329818,21 8.11579818,21 L12.3157982,21 C12.5782982,21 12.7987982,20.811 12.8302982,20.559 L13.2292982,17.7765 C13.8697982,17.514 14.4577982,17.157 15.0037982,16.7475 L17.6182982,17.7975 C17.8597982,17.892 18.1327982,17.7975 18.2587982,17.5665 L20.3587982,13.9335 C20.4847982,13.7025 20.4322982,13.419 20.2327982,13.2615 L18.0172982,11.529 Z M10.2157982,14.175 C8.18929818,14.175 6.54079818,12.5265 6.54079818,10.5 C6.54079818,8.4735 8.18929818,6.825 10.2157982,6.825 C12.2422982,6.825 13.8907982,8.4735 13.8907982,10.5 C13.8907982,12.5265 12.2422982,14.175 10.2157982,14.175 Z" id="settings" fill="#FFFFFF" fill-rule="nonzero"></path> </g> </svg> </button>
+                            <div class="dialog-settings hidden">
+                                <div class="settings-group mic-enable active">
+                                    <div class="settings-header wrapper"> <span>Microphone</span> </div>
+                                    <div class="settings-mics visible">
+                                        <ul class="select-mic">
+                                            <li data-device-id="default" data-device-label="Default - Microphone (Realtek Audio)" class="mic-item active"><i class="a-indicator"></i><span>Default - Microphone (Realtek Audio)</span></li>
+                                            <li data-device-id="communications" data-device-label="Communications - Microphone (Realtek Audio)" class="mic-item"><i class="a-indicator"></i><span>Communications - Microphone (Realtek Audio)</span></li>
+                                            <li data-device-id="2295718b7984b518e6ca0110324ec179ec8db61ec75ed0be989a6f660973ed5d" data-device-label="Microphone (Realtek Audio)" class="mic-item"><i class="a-indicator"></i><span>Microphone (Realtek Audio)</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="alert error browser-not-supported">
+                    <div class="alert_icon"></div>
+                    <div class="h">Your browser is not supported</div>
+                    <div class="desc">To use this website, we recommend the latest version of <a href="https://www.google.com/chrome/browser/desktop/index.html" target="_blank" rel="nofollow">Chrome</a> or <a href="https://www.mozilla.org/firefox/new/" target="_blank"
+                            rel="nofollow">Firefox</a>.</div>
+                </div>
+                <div class="alert error common" id="alert-template">
+                    <div class="alert_icon"></div>
+                    <div class="desc only hidden no-mics">No microphones found. Sound recording is unavailable.</div>
+                    <div class="desc only hidden internal-error">Browser error. Please reload the page.</div>
+                    <div class="buttons"> <button class="btn white btn-alert-ok">Ok</button> </div>
+                </div>
+            </div>
+            <!-- End start record -->
+
+            <!-- Begin preview record -->
+            <div class="voice-recorder preview display-none">
+                <div class="allow-mic-message ">
+                    <div class="mic-icon"> <svg width="24px" height="26px" viewBox="0 0 24 26" version="1.1" xmlns="http://www.w3.org/2000/svg"> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <path d="M21.3333333,12 L19.0666667,12 C19.0666667,12.9866667 18.8533333,13.9066667 18.4933333,14.7333333 L20.1333333,16.3733333 C20.88,15.0666667 21.3333333,13.5866667 21.3333333,12 Z M15.9733333,12.2266667 C15.9733333,12.1466667 16,12.08 16,12 L16,4 C16,1.78666667 14.2133333,0 12,0 C9.78666667,0 8,1.78666667 8,4 L8,4.24 L15.9733333,12.2266667 Z M1.69333333,1.33333333 L0,3.02666667 L8.01333333,11.04 L8.01333333,12 C8.01333333,14.2133333 9.78666667,16 12,16 C12.2933333,16 12.5866667,15.96 12.8666667,15.8933333 L15.08,18.1066667 C14.1333333,18.5466667 13.08,18.8 12,18.8 C8.32,18.8 4.93333333,16 4.93333333,12 L2.66666667,12 C2.66666667,16.5466667 6.29333333,20.3066667 10.6666667,20.96 L10.6666667,25.3333333 L13.3333333,25.3333333 L13.3333333,20.96 C14.5466667,20.7866667 15.6933333,20.36 16.72,19.76 L22.3066667,25.3333333 L24,23.64 L1.69333333,1.33333333 Z" id="Shape" fill="#FFFFFF" fill-rule="nonzero"></path> </g> </svg>                        </div>
+                    <div>Please allow access to your microphone to continue…</div>
+                </div>
+                <div class="reaching-max-time-msg">
+                    <div class="msg"> You are reaching maximum record time. Recording will be stopped in <span class="time"></span> </div>
+                </div>
+                <div class="press-mic-message">
+                    <div>Click the button to start recording…</div>
+                </div>
+                <div class="waveform-container">
+                    <div class="audio-editor">
+                        <div class="top-controls visible"> <button class="btn-quit"> <!--?xml version="1.0" encoding="UTF-8"?--> <svg width="15px" height="15px" viewBox="0 0 15 15" version="1.1" xmlns="http://www.w3.org/2000/svg"> <defs></defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <path d="M14.7113288,0.288671184 L14.7113288,0.288671184 C14.3264339,-0.0962237281 13.702396,-0.0962237281 13.317501,0.288671184 L7.5,6.10617222 L1.68249896,0.288671184 C1.29760405,-0.0962237281 0.673566097,-0.0962237281 0.288671184,0.288671184 L0.288671184,0.288671184 C-0.0962237281,0.673566097 -0.0962237281,1.29760405 0.288671184,1.68249896 L6.10617222,7.5 L0.288671184,13.317501 C-0.0962237281,13.702396 -0.0962237281,14.3264339 0.288671184,14.7113288 L0.288671184,14.7113288 C0.673566097,15.0962237 1.29760405,15.0962237 1.68249896,14.7113288 L7.5,8.89382778 L13.317501,14.7113288 C13.702396,15.0962237 14.3264339,15.0962237 14.7113288,14.7113288 L14.7113288,14.7113288 C15.0962237,14.3264339 15.0962237,13.702396 14.7113288,13.317501 L8.89382778,7.5 L14.7113288,1.68249896 C15.0962237,1.29760405 15.0962237,0.673566097 14.7113288,0.288671184 Z" id="Shape" fill="#FFFFFF" fill-rule="nonzero"></path> </g> </svg> </button>                            </div>
+                        <div class="canvas-and-controls">
+                            <div class="waveform-canvas-container">
+                                <div class="selection-area"></div>
+                                <div class="canvas-wrapper"> <canvas class="waveform-canvas" width="1366" height="120"></canvas> </div>
+                                <div class="play-progress-line" data-content="00:00.0" style="left: 70px;"></div>
+                            </div>
+                            <div class="control-bars-wrapper">
+                                <div class="record-controls">
+                                    <div class="control-bar cb-left" data-content="00:00.0"> </div>
+                                    <div class="control-bar cb-right" data-content="00:00.7"> </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="controls flex">
+                            <div class="flex-1"> <button class="play-button"> <div class="tooltip"> <span>Phát</span> <span class="space">Space</span> </div> <div class="arrow"></div> </button> <button class="fade-in"></button> <button class="fade-out"></button> </div>
+                            <div class="block-save flex">
+                                <div class="flex-right"> <button class="btn-save"> <div class="save-label">Lưu lại</div> <div class="save-processing"> <div class="save-processing-bg"></div> <div class="save-processing-label">Đang xử lý...</div> </div> </button>
+                                    <div class="dropdown">
+                                        <button class="btn-save-gdrive">Google Drive</button> <button class="btn-save-dropbox">Dropbox</button> </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dialog-quit">
+                            <div class="label-quit">Are you sure you want to finish editing?</div> <button class="btn-quit-accept">Có</button> <button class="btn-quit-deny">Hủy bỏ</button> </div>
+                    </div>
+                </div>
+                <div class="bottom-menu">
+                    <div class="mode-switch flex-1 flex-left"> </div>
+                    <div class="flex-1 flex-center">
+                        <div class="btn-record" id="btn-preview-record"> <i class="icn-record"> <i class="icn-record-inner"></i> <svg width="14px" height="19px" viewBox="0 0 14 19" version="1.1" xmlns="http://www.w3.org/2000/svg"> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <path d="M7,12 C8.66,12 9.99,10.66 9.99,9 L10,3 C10,1.34 8.66,0 7,0 C5.34,0 4,1.34 4,3 L4,9 C4,10.66 5.34,12 7,12 Z M12.3,9 C12.3,12 9.76,14.1 7,14.1 C4.24,14.1 1.7,12 1.7,9 L0,9 C0,12.41 2.72,15.23 6,15.72 L6,19 L8,19 L8,15.72 C11.28,15.24 14,12.42 14,9 L12.3,9 Z" id="mic" fill="#FFFFFF" fill-rule="nonzero"></path> </g> </svg>                            </i>
+                            <div class="record-timer">00:00</div>
+                            <div class="processing-info">
+                                <div class="processing-info-inner"> </div>
+                                <div class="processing-text"> <span class="the-text">Đang xử lý...</span> </div>
+                            </div>
+                        </div> <button type="button" class="btn-pause-record active"> <i class="icn-pause-record"> <svg width="12px" height="15px" viewBox="0 0 12 15" version="1.1" xmlns="http://www.w3.org/2000/svg"> <defs></defs> <g id="webcamera.io" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="ui_kit" transform="translate(-117.000000, -695.000000)" fill="#FFFFFF"> <g id="Group-3" transform="translate(100.000000, 680.000000)"> <g id="record_pause" transform="translate(17.000000, 15.000000)"> <rect id="Rectangle-6" x="0" y="0" width="4" height="15" rx="1"></rect> <rect id="Rectangle-6-Copy-2" x="8" y="0" width="4" height="15" rx="1"></rect> </g> </g> </g> </g> </svg> </i> </button>                        </div>
+                    <div class="flex-1 flex-right">
+                        <div class="settings"> <button type="button" class="btn-settings"> <svg width="21px" height="21px" viewBox="0 0 21 21" version="1.1" xmlns="http://www.w3.org/2000/svg"> <defs></defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <path d="M18.0172982,11.529 C18.0592982,11.193 18.0907982,10.857 18.0907982,10.5 C18.0907982,10.143 18.0592982,9.807 18.0172982,9.471 L20.2327982,7.7385 C20.4322982,7.581 20.4847982,7.2975 20.3587982,7.0665 L18.2587982,3.4335 C18.1327982,3.2025 17.8492982,3.1185 17.6182982,3.2025 L15.0037982,4.2525 C14.4577982,3.8325 13.8697982,3.486 13.2292982,3.2235 L12.8302982,0.441 C12.7987982,0.189 12.5782982,0 12.3157982,0 L8.11579818,0 C7.85329818,0 7.63279818,0.189 7.60129818,0.441 L7.20229818,3.2235 C6.56179818,3.486 5.97379818,3.843 5.42779818,4.2525 L2.81329818,3.2025 C2.57179818,3.108 2.29879818,3.2025 2.17279818,3.4335 L0.0727981841,7.0665 C-0.0637018159,7.2975 -0.000701815872,7.581 0.198798184,7.7385 L2.41429818,9.471 C2.37229818,9.807 2.34079818,10.1535 2.34079818,10.5 C2.34079818,10.8465 2.37229818,11.193 2.41429818,11.529 L0.198798184,13.2615 C-0.000701815872,13.419 -0.0532018159,13.7025 0.0727981841,13.9335 L2.17279818,17.5665 C2.29879818,17.7975 2.58229818,17.8815 2.81329818,17.7975 L5.42779818,16.7475 C5.97379818,17.1675 6.56179818,17.514 7.20229818,17.7765 L7.60129818,20.559 C7.63279818,20.811 7.85329818,21 8.11579818,21 L12.3157982,21 C12.5782982,21 12.7987982,20.811 12.8302982,20.559 L13.2292982,17.7765 C13.8697982,17.514 14.4577982,17.157 15.0037982,16.7475 L17.6182982,17.7975 C17.8597982,17.892 18.1327982,17.7975 18.2587982,17.5665 L20.3587982,13.9335 C20.4847982,13.7025 20.4322982,13.419 20.2327982,13.2615 L18.0172982,11.529 Z M10.2157982,14.175 C8.18929818,14.175 6.54079818,12.5265 6.54079818,10.5 C6.54079818,8.4735 8.18929818,6.825 10.2157982,6.825 C12.2422982,6.825 13.8907982,8.4735 13.8907982,10.5 C13.8907982,12.5265 12.2422982,14.175 10.2157982,14.175 Z" id="settings" fill="#FFFFFF" fill-rule="nonzero"></path> </g> </svg> </button>
+                            <div class="dialog-settings hidden">
+                                <div class="settings-group mic-enable active">
+                                    <div class="settings-header wrapper"> <span>Microphone</span> </div>
+                                    <div class="settings-mics visible">
+                                        <ul class="select-mic">
+                                            <li data-device-id="default" data-device-label="Default - Microphone (Realtek Audio)" class="mic-item active"><i class="a-indicator"></i><span>Default - Microphone (Realtek Audio)</span></li>
+                                            <li data-device-id="communications" data-device-label="Communications - Microphone (Realtek Audio)" class="mic-item"><i class="a-indicator"></i><span>Communications - Microphone (Realtek Audio)</span></li>
+                                            <li data-device-id="2295718b7984b518e6ca0110324ec179ec8db61ec75ed0be989a6f660973ed5d" data-device-label="Microphone (Realtek Audio)" class="mic-item"><i class="a-indicator"></i><span>Microphone (Realtek Audio)</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="alert error browser-not-supported">
+                    <div class="alert_icon"></div>
+                    <div class="h">Your browser is not supported</div>
+                    <div class="desc">To use this website, we recommend the latest version of <a href="https://www.google.com/chrome/browser/desktop/index.html" target="_blank" rel="nofollow">Chrome</a> or <a href="https://www.mozilla.org/firefox/new/" target="_blank"
+                            rel="nofollow">Firefox</a>.</div>
+                </div>
+                <div class="alert error common" id="alert-template">
+                    <div class="alert_icon"></div>
+                    <div class="desc only hidden no-mics">No microphones found. Sound recording is unavailable.</div>
+                    <div class="desc only hidden internal-error">Browser error. Please reload the page.</div>
+                    <div class="buttons"> <button class="btn white btn-alert-ok">Ok</button> </div>
+                </div>
+            </div>
+            <!-- End preview record -->
+
+        </div>
+
+        <div class="index-blocks">
+            <div class="features">
+                <div class="block">
+                    <div class="h">Ghi âm</div>
+                    <div class="line"></div>
+                    <div class="d">Trình Voice Recorder của chúng tôi là một công cụ trực tuyến đơn giản và tiện lợi, có thể được sử dụng ngay trong trình duyệt của bạn. Nó cho phép bạn ghi âm giọng nói của mình sử dụng microphone và lưu lại dưới định dạng mp3.</div>
+                </div>
+                <div class="block">
+                    <div class="h">Miễn phí sử dụng</div>
+                    <div class="line"></div>
+                    <div class="d">Voice Recorder hoàn toàn miễn phí. Không có thanh toán ngầm, phí kích hoạt, hay chi phí cho các tính năng bổ sung.</div>
+                </div>
+                <div class="block">
+                    <div class="h">Thiết lập microphone</div>
+                    <div class="line"></div>
+                    <div class="d">Bạn có thể điều chỉnh thiết lập microphone của mình sử dụng các công cụ Adobe Flash Player tiêu chuẩn (giảm tiếng vọng và điều chỉnh âm lượng).</div>
+                </div>
+                <div class="block">
+                    <div class="h">Đảm bảo riêng tư</div>
+                    <div class="line"></div>
+                    <div class="d">Chúng tôi đảm bảo rằng ứng dụng của mình hoàn toàn bảo mật. Mọi thứ bạn ghi âm đều chỉ có thể được truy cập bởi bạn: không có gì được tải lên và lưu trữ trên máy chủ của chúng tôi.</div>
+                </div>
+                <div class="block">
+                    <div class="h">Cắt bản ghi âm của bạn</div>
+                    <div class="line"></div>
+                    <div class="d">Sau khi hoàn tất ghi âm, bạn có thể cắt cúp nó đến phần mà bạn cần.</div>
+                </div>
+                <div class="block">
+                    <div class="h">Tự động cắt đoạn không có tiếng</div>
+                    <div class="line"></div>
+                    <div class="d">Voice Recorder tự động phát hiện các phân đoạn không có tiếng ở đầu và cuối đoạn ghi âm và xóa chúng để tiện cho bạn.</div>
+                </div>
+            </div>
+            <div class="one-col"> </div>
+        </div>
+    </div>
+    <!-- End content -->
+
+    <!-- Begin footer -->
+    <div class="footer">
+        <div class="copyright" id="copyright">© 123apps LLC, 2012–2021</div>
+        <div class="menu">
+            <a href="#">Bảo mật</a>
+            <a href="#">Pricing</a>
+            <a class="feedback_button" data-desc="Your feedback is important to us. Please use this form to report a bug or suggest a feature." href="#">Báo cáo sự cố</a>
+        </div>
+        <a id="language-link" href="#" data-toggle="modal" data-dismiss="modal" data-target="#modal-language">
+            <i class="icon icon-language"></i>
+            <span>tiếng Việt</span>
+        </a>
+    </div>
+    <!-- End footer -->
+
+    <!-- Begin modal -->
+    <div class="bootstrap">
+        <div id="usersystemModals">
+            <div class="modal" tabindex="-1" id="modal-login" data-backdrop="static" data-keyboard="false">
+                <div class="modal-dialog modal-dialog-centered modal-custom modal-custom-xl">
+                    <div class="modal-content"> <button type="button" class="close" data-dismiss="modal"></button>
+                        <div class="modal-header">
+                            <div class="modal-title">Sign In</div>
+                            <div class="modal-desc">One account for everything by 123apps</div>
+                        </div>
+                        <div class="modal-body">
+                            <form method="post" id="login-form" novalidate="">
+                                <div class="form-group input-icon-container"> <i class="icon icon-email icon-email-s"></i> <input name="username" type="email" autocomplete="username email" class="form-control" placeholder="E-mail"> </div>
+                                <div class="form-group input-icon-container"> <i class="icon icon-password icon-password-s"></i> <input type="password" name="password" autocomplete="current-password" class="form-control password" placeholder="Mật khẩu"> <i class="icon icon-show-password" data-enabled="0"></i>                                    </div>
+                                <div class="errors"></div>
+                                <div class="form-group"> <button type="submit" class="btn btn-primary btn-block">Sign In</button> </div>
+                            </form>
+                            <div class="text-center"> <a href="#" data-toggle="modal" data-dismiss="modal" data-target="#modal-reset-password"> Forgot password? </a> </div>
+                            <div class="text-center alternative"> Don't have an account?&nbsp;<a href="#" data-toggle="modal" data-dismiss="modal" data-target="#modal-signup">Sign Up</a> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal" tabindex="-1" id="modal-signup" data-backdrop="static" data-keyboard="false" aria-modal="true" role="dialog">
+                <div class="modal-dialog modal-dialog-centered modal-custom modal-custom-xl">
+                    <div class="modal-content"> <button type="button" class="close" data-dismiss="modal"></button>
+                        <div class="modal-header">
+                            <div class="modal-title">Create an Account</div>
+                            <div class="modal-desc">One account for everything by 123apps</div>
+                        </div>
+                        <div class="modal-body">
+                            <form method="post" id="signup-form" novalidate="">
+                                <div class="form-group input-icon-container"> <i class="icon icon-email icon-email-s"></i> <input name="username" type="email" autocomplete="username email" class="form-control" placeholder="E-mail"> </div>
+                                <div class="form-group input-icon-container"> <i class="icon icon-password icon-password-s"></i> <input type="password" name="newPassword" autocomplete="new-password" class="form-control password" placeholder="Mật khẩu"> <i class="icon icon-show-password" data-enabled="0"></i>                                    </div>
+                                <div class="errors"></div>
+                                <div class="form-group"> <button type="submit" class="btn btn-primary btn-block" data-skip-benefits="0">Create an Account</button> </div>
+                            </form>
+                            <div class="text-center notice"> By creating an account you agree to our <a href="/legal/" target="_blank">Privacy &amp; Terms</a> </div>
+                            <div class="text-center alternative"> Already have an account? <a href="#" data-toggle="modal" data-dismiss="modal" data-target="#modal-login">Sign In</a> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End modal -->
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    <script src="js/javascript.js"></script>
+</body>
+
+</html>
